@@ -1,7 +1,7 @@
 pyperl Documentation
 ====================
 
-|python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |repo-size| |donate|
+|stars| |LOC| |license| |forks| |open issues| |project status| |repo-size| |donate|
 
 -----------------------------------
 
@@ -137,18 +137,6 @@ Indices and tables
 Project Badges
 ~~~~~~~~~~~~~~
 
-.. |python| image:: https://img.shields.io/pypi/pyversions/pyperl.svg
-    :alt: |Python
-    :target: https://erdogantgithub.io/pyperl/
-
-.. |pypi| image:: https://img.shields.io/pypi/v/pyperl.svg
-    :alt: |Python Version
-    :target: https://pypi.org/project/pyperl/
-
-.. |docs| image:: https://img.shields.io/badge/Sphinx-Docs-blue.svg
-    :alt: Sphinx documentation
-    :target: https://erdogantgithub.io/pyperl/
-
 .. |stars| image:: https://img.shields.io/github/stars/erdogant/pyperl
     :alt: Stars
     :target: https://img.shields.io/github/stars/erdogant/pyperl
@@ -156,14 +144,6 @@ Project Badges
 .. |LOC| image:: https://sloc.xyz/github/erdogant/pyperl/?category=code
     :alt: lines of code
     :target: https://github.com/erdogant/pyperl
-
-.. |downloads_month| image:: https://static.pepy.tech/personalized-badge/pyperl?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=PyPI%20downloads/month
-    :alt: Downloads per month
-    :target: https://pepy.tech/project/pyperl
-
-.. |downloads_total| image:: https://static.pepy.tech/personalized-badge/pyperl?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads
-    :alt: Downloads in total
-    :target: https://pepy.tech/project/pyperl
 
 .. |license| image:: https://img.shields.io/badge/license-MIT-green.svg
     :alt: License
