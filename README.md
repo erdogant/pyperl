@@ -18,7 +18,7 @@
 
 <div>
 <a href="https://erdogant.github.io/pyperl/"><img src="https://github.com/erdogant/pyperl/blob/main/docs/figs/logo.png" width="125" align="left" /></a>
-<b>pyperl</b> is a Python library that automatically installs and manages Perl, and provides a clean interface for running Perl scripts from Python — with zero manual Perl setup required.
+<b>pyperl</b> is a Python library that automatically installs and manages Perl, and provides a clean interface for running Perl scripts from Python, with zero manual Perl setup required.
  Navigate to https://erdogant.github.io/pyperl for more detailed information. <b>⭐️ Star it if you like it ⭐️</b>
 </div>
 
