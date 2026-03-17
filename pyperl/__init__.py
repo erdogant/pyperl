@@ -29,13 +29,21 @@ __doc__ = """
 pyperl
 =====================================================================
 
-pyperl is for...
+pyperl is for runing Perl scripts using Python.
 
 Example
 -------
->>> import pyperl as pyperl
->>> model = pyperl.fit_transform(X)
->>> fig,ax = pyperl.plot(model)
+>>> # Import
+>>> from pyperl import pyperl
+>>>
+>>> # Initialize
+>>> perl = pyperl()
+>>>
+>>> # Get example audio file
+>>> audio_file = perl.import_example()
+>>>
+>>> # Run perl script for audio conversion using ffmpeg
+>>> out = perl.run(audio_file, "c:/temp/output.mp3")
 
 References
 ----------
