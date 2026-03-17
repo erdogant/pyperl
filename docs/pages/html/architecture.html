@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture &amp; Internals &mdash; pyperl pyperl documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=affbb2a6"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Support &amp; Sponsorship" href="support.html" />
+    <link rel="prev" title="Troubleshooting" href="troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyperl
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Cross-Platform Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture &amp; Internals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initialisation-flow">Initialisation flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#perl-resolution-order">Perl resolution order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#script-execution-flow">Script execution flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-structure">Module structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-classes-and-functions">Key classes and functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#platform-specific-archive-handling">Platform-specific archive handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frozen-executable-support">Frozen executable support</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support &amp; Sponsorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+</ul>
+
+    <a href= "genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyperl</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Architecture &amp; Internals</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/architecture.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="architecture-internals">
+<span id="architecture"></span><h1>Architecture &amp; Internals<a class="headerlink" href="#architecture-internals" title="Link to this heading"></a></h1>
+<p>This page explains how pyperl is structured and what happens under the hood
+when you call <code class="docutils literal notranslate"><span class="pre">pyperl()</span></code> and <code class="docutils literal notranslate"><span class="pre">perl.run()</span></code>.</p>
+<section id="initialisation-flow">
+<h2>Initialisation flow<a class="headerlink" href="#initialisation-flow" title="Link to this heading"></a></h2>
+<p>When you construct a <code class="docutils literal notranslate"><span class="pre">pyperl</span></code> instance, the following steps happen in order:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pyperl.__init__()
+│
+├── 1. set_logger(verbose)          — configure log level
+├── 2. determine_OS()               — detect platform, set archive URL / filename
+├── 3. set_archive_dir(...)         — locate or set the Perl archive directory
+├── 4. get_script_location(script)  — resolve and validate the Perl script path
+└── 5. install_perl(...)            — find or install Perl
+        │
+        ├── ensure_perl()           — check PATH and common directories
+        │       └── find_perl()     — recursive search within a directory
+        │
+        └── (if not found)
+            ├── Download archive from URL (via wget.download)
+            ├── Extract ZIP (Windows) or TAR.GZ (Linux/macOS)
+            └── ensure_perl()       — locate the newly extracted executable
+</pre></div>
+</div>
+</section>
+<section id="perl-resolution-order">
+<h2>Perl resolution order<a class="headerlink" href="#perl-resolution-order" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ensure_perl()</span></code> searches for Perl in this priority order:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shutil.which(&quot;perl&quot;)</span></code> — already on the system <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">installation_dir</span></code> — the configured portable install location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">perl_search_dirs</span></code> — any extra directories you supplied.</p></li>
+<li><p>Standard system paths:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/usr/bin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/usr/local/bin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/opt/homebrew/bin</span></code> (macOS Homebrew)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Strawberry\perl\bin</span></code> (Windows)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Perl\bin</span></code> (Windows)</p></li>
+</ul>
+</li>
+</ol>
+<p>If Perl is not found in any of these locations, <code class="docutils literal notranslate"><span class="pre">install_perl()</span></code> downloads and
+extracts the portable package.</p>
+</section>
+<section id="script-execution-flow">
+<h2>Script execution flow<a class="headerlink" href="#script-execution-flow" title="Link to this heading"></a></h2>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">perl.run(*args,</span> <span class="pre">script,</span> <span class="pre">timeout)</span></code> does the following:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>run()
+│
+├── Validate perl_path is set
+├── Resolve script path (override or default)
+├── Build subprocess command:
+│       [perl_path, script_path, *args]
+├── subprocess.run(..., capture_output=True, timeout=timeout)
+├── Check returncode — raise RuntimeError on non-zero
+└── Return {&quot;stdout&quot;: ..., &quot;stderr&quot;: ..., &quot;returncode&quot;: ...}
+</pre></div>
+</div>
+</section>
+<section id="module-structure">
+<h2>Module structure<a class="headerlink" href="#module-structure" title="Link to this heading"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pyperl/
+├── pyperl.py          ← main module (all classes and functions)
+├── perl_packages/     ← optional bundled Perl archives (offline use)
+│   ├── strawberry-perl-*.zip        (Windows)
+│   └── perl-5.x.x.tar.gz           (Linux/macOS)
+├── perl_scripts/      ← default Perl scripts shipped with the library
+│   └── convert_audio.pl
+└── data/
+    └── example.wav    ← bundled example audio file
+</pre></div>
+</div>
+</section>
+<section id="key-classes-and-functions">
+<h2>Key classes and functions<a class="headerlink" href="#key-classes-and-functions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Role</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pyperl</span></code> (class)</p></td>
+<td><p>Main interface. Manages Perl installation and script execution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">wget</span></code> (class)</p></td>
+<td><p>Thin download helper. Uses <code class="docutils literal notranslate"><span class="pre">requests</span></code> to stream files to disk.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">find_perl(start_dir)</span></code></p></td>
+<td><p>Recursive filesystem walker that locates a Perl binary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_base_dir()</span></code></p></td>
+<td><p>Returns the package root, handling PyInstaller/cx_Freeze frozen paths.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">set_logger(verbose)</span></code></p></td>
+<td><p>Configures the <code class="docutils literal notranslate"><span class="pre">&quot;pyperl&quot;</span></code> logger level.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="platform-specific-archive-handling">
+<h2>Platform-specific archive handling<a class="headerlink" href="#platform-specific-archive-handling" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Platform</p></th>
+<th class="head"><p>Archive type</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Extraction</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><p>ZIP</p></td>
+<td><p>Strawberry Perl GitHub releases</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">zipfile.ZipFile.extractall()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linux / macOS</p></td>
+<td><p>TAR.GZ</p></td>
+<td><p>CPAN (perl.org)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tarfile.open().extractall()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="frozen-executable-support">
+<h2>Frozen executable support<a class="headerlink" href="#frozen-executable-support" title="Link to this heading"></a></h2>
+<p>pyperl uses <code class="docutils literal notranslate"><span class="pre">sys._MEIPASS</span></code> to locate bundled assets when running inside a
+frozen executable created by PyInstaller or cx_Freeze:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_base_dir</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s2">&quot;frozen&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">_MEIPASS</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
+</pre></div>
+</div>
+<p>This ensures that <code class="docutils literal notranslate"><span class="pre">perl_packages/</span></code>, <code class="docutils literal notranslate"><span class="pre">perl_scripts/</span></code>, and <code class="docutils literal notranslate"><span class="pre">data/</span></code> are
+found correctly in both development and packaged deployments.</p>
+<hr>
+<center>
+        <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+        <!-- Show an image ad -->
+        <!-- <div data-ea-publisher="erdogantgithubio" data-ea-type="image"></div> -->
+        <div data-ea-publisher="erdogantgithubio" data-ea-type="image" data-ea-style="stickybox"></div>
+</center>
+<hr></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="support.html" class="btn btn-neutral float-right" title="Support &amp; Sponsorship" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Erdogan Taskesen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

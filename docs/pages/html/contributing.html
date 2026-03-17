@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributing &mdash; pyperl pyperl documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=affbb2a6"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api_reference.html" />
+    <link rel="prev" title="Support &amp; Sponsorship" href="support.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyperl
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Cross-Platform Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture &amp; Internals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support &amp; Sponsorship</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-tests">Running the tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-examples">Adding examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-style">Code style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reporting-bugs">Reporting bugs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+</ul>
+
+    <a href= "genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyperl</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contributing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/contributing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contributing">
+<span id="id1"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h1>
+<p>Contributions are very welcome! Whether it’s a bug fix, a new feature, improved
+documentation, or a new example — all pull requests are appreciated.</p>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Fork the repository on <a class="reference external" href="https://github.com/erdogant/pyperl">GitHub</a>.</p></li>
+<li><p>Clone your fork and create a feature branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/&lt;your-username&gt;/pyperl.git</span>
+<span class="go">cd pyperl</span>
+<span class="go">git checkout -b my-feature</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install the package in editable mode with development dependencies:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install -e &quot;.[dev]&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make your changes, add tests, and update documentation as needed.</p></li>
+<li><p>Push and open a pull request against the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
+</ol>
+</section>
+<section id="running-the-tests">
+<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Link to this heading"></a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pytest tests/</span>
+</pre></div>
+</div>
+<p>Please ensure all tests pass before submitting a pull request.</p>
+</section>
+<section id="adding-examples">
+<h2>Adding examples<a class="headerlink" href="#adding-examples" title="Link to this heading"></a></h2>
+<p>Examples in <code class="docutils literal notranslate"><span class="pre">pyperl.py</span></code> follow the <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">[example_name]</span></code> / <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">[/example_name]</span></code>
+marker convention so they can be included directly in the RST documentation via
+<code class="docutils literal notranslate"><span class="pre">literalinclude</span></code>. When adding a new example function:</p>
+<ol class="arabic simple">
+<li><p>Add a named function at the bottom of <code class="docutils literal notranslate"><span class="pre">pyperl.py</span></code> wrapped in the marker comments.</p></li>
+<li><p>Add a corresponding <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">literalinclude::</span></code> block in <code class="docutils literal notranslate"><span class="pre">docs/examples.rst</span></code>.</p></li>
+<li><p>Reference the example from <code class="docutils literal notranslate"><span class="pre">quickstart.rst</span></code> or <code class="docutils literal notranslate"><span class="pre">usage.rst</span></code> if relevant.</p></li>
+</ol>
+</section>
+<section id="code-style">
+<h2>Code style<a class="headerlink" href="#code-style" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Follow <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8</a>.</p></li>
+<li><p>Use NumPy-style docstrings for all public functions and methods.</p></li>
+<li><p>Keep functions small and focused.</p></li>
+</ul>
+</section>
+<section id="reporting-bugs">
+<h2>Reporting bugs<a class="headerlink" href="#reporting-bugs" title="Link to this heading"></a></h2>
+<p>Open an issue on <a class="reference external" href="https://github.com/erdogant/pyperl/issues">GitHub</a> with:</p>
+<ul class="simple">
+<li><p>A minimal reproducible example</p></li>
+<li><p>Your OS and Python version</p></li>
+<li><p>The full traceback</p></li>
+<li><p>Output of <code class="docutils literal notranslate"><span class="pre">pyperl(verbose=&quot;debug&quot;)</span></code></p></li>
+</ul>
+<hr>
+<center>
+        <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+        <!-- Show an image ad -->
+        <!-- <div data-ea-publisher="erdogantgithubio" data-ea-type="image"></div> -->
+        <div data-ea-publisher="erdogantgithubio" data-ea-type="image" data-ea-style="stickybox"></div>
+</center>
+<hr></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="support.html" class="btn btn-neutral float-left" title="Support &amp; Sponsorship" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api_reference.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Erdogan Taskesen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

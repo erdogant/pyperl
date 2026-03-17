@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examples &mdash; pyperl pyperl documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=affbb2a6"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="prev" title="Cross-Platform Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyperl
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Cross-Platform Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-with-arguments">Run with arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspect-the-result-dictionary">Inspect the result dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#override-the-script-at-run-time">Override the script at run-time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-installation-directory">Custom installation directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#search-additional-directories">Search additional directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#force-reinstall">Force reinstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timeout-handling">Timeout handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verbosity-logging-control">Verbosity / logging control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-audio-conversion-workflow">Full audio conversion workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture &amp; Internals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support &amp; Sponsorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+</ul>
+
+    <a href= "genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyperl</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/examples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="examples">
+<span id="id1"></span><h1>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h1>
+<section id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h2>
+<p>Auto-detect or install Perl, then run a script.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Basic initialization and script execution.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="c1"># Initialize — auto-detects or installs Perl</span>
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span><span class="n">script</span><span class="o">=</span><span class="s2">&quot;my_script.pl&quot;</span><span class="p">)</span>
+
+<span class="c1"># Run the default Perl script</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;returncode&quot;</span><span class="p">])</span>  <span class="c1"># 0 = success</span>
+</pre></div>
+</div>
+</section>
+<section id="run-with-arguments">
+<h2>Run with arguments<a class="headerlink" href="#run-with-arguments" title="Link to this heading"></a></h2>
+<p>Forward positional arguments directly to the Perl script.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Run a Perl script with positional arguments.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span><span class="n">script</span><span class="o">=</span><span class="s2">&quot;perl_scripts/convert_audio.pl&quot;</span><span class="p">)</span>
+
+<span class="c1"># Pass positional arguments directly to the Perl script</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;input.wav&quot;</span><span class="p">,</span> <span class="s2">&quot;output.mp3&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;returncode&quot;</span><span class="p">])</span>  <span class="c1"># 0 = success</span>
+</pre></div>
+</div>
+</section>
+<section id="inspect-the-result-dictionary">
+<h2>Inspect the result dictionary<a class="headerlink" href="#inspect-the-result-dictionary" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">run()</span></code> returns a plain <code class="docutils literal notranslate"><span class="pre">dict</span></code> — inspect all three output fields.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span><span class="n">script</span><span class="o">=</span><span class="s2">&quot;my_script.pl&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;--input&quot;</span><span class="p">,</span> <span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STDOUT   :&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STDERR   :&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;stderr&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exit code:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;returncode&quot;</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;returncode&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Script completed successfully.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="override-the-script-at-run-time">
+<h2>Override the script at run-time<a class="headerlink" href="#override-the-script-at-run-time" title="Link to this heading"></a></h2>
+<p>Change the Perl script for a single call without re-initialising.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Search additional directories for an existing Perl installation.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span>
+    <span class="n">script</span><span class="o">=</span><span class="s2">&quot;my_script.pl&quot;</span><span class="p">,</span>
+    <span class="n">perl_search_dirs</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;/home/myuser/perl5/bin&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;/custom/tools/perl/bin&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;--verbose&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="custom-installation-directory">
+<h2>Custom installation directory<a class="headerlink" href="#custom-installation-directory" title="Link to this heading"></a></h2>
+<p>Install portable Perl to a persistent path and add it to the system <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Install portable Perl to a custom directory and expose it on PATH.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span>
+    <span class="n">script</span><span class="o">=</span><span class="s2">&quot;my_script.pl&quot;</span><span class="p">,</span>
+    <span class="n">installation_dir</span><span class="o">=</span><span class="s2">&quot;/opt/my_perl&quot;</span><span class="p">,</span>
+    <span class="n">set_to_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>    <span class="c1"># adds Perl bin dir to os.environ[&quot;PATH&quot;]</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="search-additional-directories">
+<h2>Search additional directories<a class="headerlink" href="#search-additional-directories" title="Link to this heading"></a></h2>
+<p>Point pyperl at a non-standard Perl location before falling back to a portable install.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Override the default script at run-time without re-initializing.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">()</span>
+
+<span class="c1"># Run a completely different script on the same Perl installation</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;arg1&quot;</span><span class="p">,</span> <span class="s2">&quot;arg2&quot;</span><span class="p">,</span> <span class="n">script</span><span class="o">=</span><span class="s2">&quot;other_script.pl&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="force-reinstall">
+<h2>Force reinstall<a class="headerlink" href="#force-reinstall" title="Link to this heading"></a></h2>
+<p>Wipe any existing portable Perl installation and re-extract from the archive.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Force a clean reinstall of portable Perl.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="c1"># Wipes any existing portable install and re-extracts from the archive</span>
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span>
+    <span class="n">script</span><span class="o">=</span><span class="s2">&quot;my_script.pl&quot;</span><span class="p">,</span>
+    <span class="n">force_install</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="timeout-handling">
+<h2>Timeout handling<a class="headerlink" href="#timeout-handling" title="Link to this heading"></a></h2>
+<p>Cap execution time and handle a <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> if the script runs too long.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Handle a long-running script with a custom timeout.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span><span class="n">script</span><span class="o">=</span><span class="s2">&quot;long_running.pl&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>   <span class="c1"># raises RuntimeError after 60 s</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Script timed out or failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="verbosity-logging-control">
+<h2>Verbosity / logging control<a class="headerlink" href="#verbosity-logging-control" title="Link to this heading"></a></h2>
+<p>Switch between silent, informational, and debug log levels.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Control log output with the verbose parameter.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="c1"># Silent — no log output at all</span>
+<span class="n">perl_silent</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span><span class="n">script</span><span class="o">=</span><span class="s2">&quot;my_script.pl&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="s2">&quot;silent&quot;</span><span class="p">)</span>
+
+<span class="c1"># Debug — full internal logging to stdout</span>
+<span class="n">perl_debug</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span><span class="n">script</span><span class="o">=</span><span class="s2">&quot;my_script.pl&quot;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="s2">&quot;debug&quot;</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl_debug</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="full-audio-conversion-workflow">
+<h2>Full audio conversion workflow<a class="headerlink" href="#full-audio-conversion-workflow" title="Link to this heading"></a></h2>
+<p>End-to-end example using the bundled <code class="docutils literal notranslate"><span class="pre">convert_audio.pl</span></code> script and the
+example <code class="docutils literal notranslate"><span class="pre">example.wav</span></code> audio file.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Full end-to-end audio conversion workflow.&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyperl</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyperl</span>
+
+<span class="c1"># 1. Initialize — Perl is found or installed automatically</span>
+<span class="n">perl</span> <span class="o">=</span> <span class="n">pyperl</span><span class="p">(</span>
+    <span class="n">script</span><span class="o">=</span><span class="s2">&quot;perl_scripts/convert_audio.pl&quot;</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># 2. Use the bundled example audio file</span>
+<span class="n">audio_file</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">import_example</span><span class="p">()</span>   <span class="c1"># returns path to data/example.wav</span>
+
+<span class="c1"># 3. Convert to MP3</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">perl</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">audio_file</span><span class="p">,</span> <span class="s2">&quot;output.mp3&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;returncode&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conversion successful!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conversion failed:&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;stderr&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+<hr>
+<center>
+        <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+        <!-- Show an image ad -->
+        <!-- <div data-ea-publisher="erdogantgithubio" data-ea-type="image"></div> -->
+        <div data-ea-publisher="erdogantgithubio" data-ea-type="image" data-ea-style="stickybox"></div>
+</center>
+<hr></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Cross-Platform Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Erdogan Taskesen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

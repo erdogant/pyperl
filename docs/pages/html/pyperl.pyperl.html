@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API References &mdash; pyperl pyperl documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=affbb2a6"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyperl
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Cross-Platform Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture &amp; Internals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support &amp; Sponsorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+</ul>
+
+    <a href= "genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyperl</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API References</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pyperl.pyperl.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pyperl.pyperl">
+<span id="api-references"></span><h1>API References<a class="headerlink" href="#module-pyperl.pyperl" title="Link to this heading"></a></h1>
+<p>pyperl.</p>
+<p>Name        : pyperl.py
+Author      : erdogant
+Contact     : <a class="reference external" href="mailto:erdogant&#37;&#52;&#48;gmail&#46;com">erdogant<span>&#64;</span>gmail<span>&#46;</span>com</a>
+github      : <a class="reference external" href="https://github.com/erdogant/pyperl">https://github.com/erdogant/pyperl</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyperl.pyperl.find_perl">
+<span class="sig-prename descclassname"><span class="pre">pyperl.pyperl.</span></span><span class="sig-name descname"><span class="pre">find_perl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.find_perl" title="Link to this definition"></a></dt>
+<dd><p>Recursively search for a Perl executable starting from the given directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>start_dir</strong> (<em>Path</em>) – The directory from which to begin searching for the Perl executable.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The full path to the Perl executable if found, otherwise None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyperl.pyperl.get_base_dir">
+<span class="sig-prename descclassname"><span class="pre">pyperl.pyperl.</span></span><span class="sig-name descname"><span class="pre">get_base_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.get_base_dir" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>base_dir</strong> – DESCRIPTION.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>TYPE</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pyperl.pyperl.</span></span><span class="sig-name descname"><span class="pre">pyperl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'perl_scripts/convert_audio.pl'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">installation_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_to_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perl_search_dirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_install</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl" title="Link to this definition"></a></dt>
+<dd><p>Convert audio files to WAV using a Perl script.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl.clean_installation_dir">
+<span class="sig-name descname"><span class="pre">clean_installation_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl.clean_installation_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl.determine_OS">
+<span class="sig-name descname"><span class="pre">determine_OS</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl.determine_OS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl.ensure_perl">
+<span class="sig-name descname"><span class="pre">ensure_perl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_to_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perl_search_dirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl.ensure_perl" title="Link to this definition"></a></dt>
+<dd><p>Ensure Perl is available in the system path.</p>
+<p>This method checks for Perl installation in standard locations and optional
+custom directories. If found, it ensures Perl is accessible either through
+PATH modification or by setting the environment variable directly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>set_to_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, modifies the system PATH to include the portable Perl directory.
+Default is False.</p></li>
+<li><p><strong>perl_search_dirs</strong> (<em>list</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em><em>, </em><em>optional</em>) – Additional directories to search for Perl executables. If None, uses
+default system paths. Default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the found Perl executable if successful, None otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ol class="arabic simple">
+<li><p>Checks standard system paths first (Linux/Mac: /usr/bin, /opt/homebrew/bin)</p></li>
+<li><p>For Windows systems, checks common Perl installation locations</p></li>
+<li><p>If set_to_path is True, modifies PATH environment variable</p></li>
+<li><p>Returns None if Perl cannot be found</p></li>
+</ol>
+<p class="rubric">References</p>
+<ul class="simple">
+<li><p>Perl installation guide: <a class="reference external" href="https://www.perl.org/get.html#unix_like">https://www.perl.org/get.html#unix_like</a></p></li>
+<li><p>Python’s shutil.which documentation: <a class="reference external" href="https://docs.python.org/3/library/shutil.html#module-shutil">https://docs.python.org/3/library/shutil.html#module-shutil</a></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl.get_script_location">
+<span class="sig-name descname"><span class="pre">get_script_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl.get_script_location" title="Link to this definition"></a></dt>
+<dd><p>Resolve and validate the location of the Perl script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>script</strong> (<em>str</em><em> or </em><em>Path</em>) – Path to the Perl script to be used for audio conversion.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>script</strong> – Path object pointing to the Perl script if found, otherwise None.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl.import_example">
+<span class="sig-name descname"><span class="pre">import_example</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl.import_example" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl.install_perl">
+<span class="sig-name descname"><span class="pre">install_perl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_to_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perl_search_dirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_install</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl.install_perl" title="Link to this definition"></a></dt>
+<dd><p>Install and configure Perl on the system.</p>
+<p>This method installs Perl from a portable package if it’s not already available
+in the system or if force_install is True. It supports both Windows and Unix-like
+systems with appropriate archive formats (ZIP for Windows, TAR.GZ for Linux/Mac).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>set_to_path</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, sets the installation directory to the portable_perl path.
+Default is False.</p></li>
+<li><p><strong>perl_search_dirs</strong> (<em>list</em><em>[</em><em>str</em><em>] </em><em>| </em><em>None</em><em>, </em><em>optional</em>) – List of directories to search for existing Perl installations.
+If None, default system paths are used. Default is None.</p></li>
+<li><p><strong>force_install</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, forces reinstallation even if Perl is partially installed.
+Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the installed Perl executable if successful, None otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – If Perl cannot be installed or extracted properly.</p></li>
+<li><p><strong>FileNotFoundError</strong> – If required archive files are missing.</p></li>
+<li><p><strong>PermissionError</strong> – If permission is denied during extraction or permission changes.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ol class="arabic simple">
+<li><p>On Windows, requires a valid “strawberry-perl” zip package.</p></li>
+<li><p>On Unix-like systems, expects a “perl-5.42.1.tar.gz” archive.</p></li>
+<li><p>The portable directory is set to <cite>portable_perl</cite> under the project root.</p></li>
+<li><p>Executable permissions are set to 755 for Perl binaries.</p></li>
+</ol>
+<p class="rubric">References</p>
+<ul class="simple">
+<li><p>Perl installation guide: <a class="reference external" href="https://www.perl.org/get.html#unix_like">https://www.perl.org/get.html#unix_like</a></p></li>
+<li><p>Python’s ensure_perl docs: <a class="reference external" href="https://github.com/pyperl/pyperl/blob/main/pyperl/pyperl.py#L200">https://github.com/pyperl/pyperl/blob/main/pyperl/pyperl.py#L200</a></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl.run" title="Link to this definition"></a></dt>
+<dd><p>Execute a Perl script with arbitrary arguments and manage execution parameters.</p>
+<p>This method runs Perl scripts with support for custom arguments, timeout control,
+and detailed output collection. It handles error conditions and provides
+comprehensive logging of execution details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>*args</strong> (<em>str</em>) – Variable length argument list to pass to the Perl script.
+If None, uses the script’s embedded default arguments.</p></li>
+<li><p><strong>script</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to Perl script to execute. If None, uses the instance’s default script.
+Default is None.</p></li>
+<li><p><strong>timeout</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum execution time in seconds. Default is 300 seconds (5 minutes).
+Raise RuntimeError if exceeded.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing:
+- “stdout”: str: Standard output from Perl script
+- “stderr”: str: Error output from Perl script
+- “returncode”: int: Exit status code of Perl process</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If Perl executable not found
+    - If script execution fails with non-zero exit code
+    - If script execution times out
+    - If required dependencies are missing</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ol class="arabic simple">
+<li><p>Logs detailed execution information including command construction</p></li>
+<li><p>Validates script existence before execution</p></li>
+<li><p>Handles subprocess timeouts gracefully</p></li>
+<li><p>Preserves original Perl script arguments when not overridden</p></li>
+<li><p>Returns structured output for easy programmatic handling</p></li>
+</ol>
+<p class="rubric">Examples</p>
+<dl class="simple">
+<dt>Basic execution:</dt><dd><p>result = pyperl.run(script=”my_script.pl”)</p>
+</dd>
+<dt>With custom arguments:</dt><dd><p>result = pyperl.run(”–input”, “data.txt”)</p>
+</dd>
+<dt>Timeout example:</dt><dd><dl class="simple">
+<dt>try:</dt><dd><p>result = pyperl.run(script=”long_script.pl”, timeout=60)</p>
+</dd>
+<dt>except RuntimeError as e:</dt><dd><p>print(f”Execution timed out: {e}”)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.pyperl.set_archive_dir">
+<span class="sig-name descname"><span class="pre">set_archive_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">installation_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.pyperl.set_archive_dir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyperl.pyperl.set_logger">
+<span class="sig-prename descclassname"><span class="pre">pyperl.pyperl.</span></span><span class="sig-name descname"><span class="pre">set_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.set_logger" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyperl.pyperl.wget">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">pyperl.pyperl.</span></span><span class="sig-name descname"><span class="pre">wget</span></span><a class="headerlink" href="#pyperl.pyperl.wget" title="Link to this definition"></a></dt>
+<dd><p>Retrieve file from url.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.wget.download">
+<span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">writepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.wget.download" title="Link to this definition"></a></dt>
+<dd><p>Download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str.</em>) – Internet source.</p></li>
+<li><p><strong>writepath</strong> (<em>str.</em>) – Directory to write the file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyperl.pyperl.wget.filename_from_url">
+<span class="sig-name descname"><span class="pre">filename_from_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyperl.pyperl.wget.filename_from_url" title="Link to this definition"></a></dt>
+<dd><p>Return filename.</p>
+</dd></dl>
+
+</dd></dl>
+
+<hr>
+<center>
+        <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+        <!-- Show an image ad -->
+        <!-- <div data-ea-publisher="erdogantgithubio" data-ea-type="image"></div> -->
+        <div data-ea-publisher="erdogantgithubio" data-ea-type="image" data-ea-style="stickybox"></div>
+</center>
+<hr></section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Erdogan Taskesen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
