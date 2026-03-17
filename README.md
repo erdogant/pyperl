@@ -4,7 +4,7 @@
 [![Open Issues](https://img.shields.io/github/issues/erdogant/pyperl.svg)](https://github.com/erdogant/pyperl/issues)
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Docs](https://img.shields.io/badge/Sphinx-Docs-Green)](https://erdogant.github.io/pyperl/)
-[![Medium](https://img.shields.io/badge/Medium-Blog-black)](https://erdogant.github.io/pyperl/pages/html/Documentation.html#medium-blog)
+[![Medium](https://img.shields.io/badge/Medium-Blog-black)](https://erdogant.medium.com)
 ![GitHub repo size](https://img.shields.io/github/repo-size/erdogant/pyperl)
 [![Donate](https://img.shields.io/badge/Support%20this%20project-grey.svg?logo=github%20sponsors)](https://erdogant.github.io/pyperl/pages/html/Documentation.html#)
 
