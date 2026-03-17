@@ -1,7 +1,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/pyperl)](https://img.shields.io/pypi/pyversions/pyperl)
 [![PyPI Version](https://img.shields.io/pypi/v/pyperl)](https://pypi.org/project/pyperl/)
 ![GitHub Repo stars](https://img.shields.io/github/stars/erdogant/pyperl)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/pyperl/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/pyperl/blob/main/LICENSE)
 [![Forks](https://img.shields.io/github/forks/erdogant/pyperl.svg)](https://github.com/erdogant/pyperl/network)
 [![Open Issues](https://img.shields.io/github/issues/erdogant/pyperl.svg)](https://github.com/erdogant/pyperl/issues)
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
@@ -17,10 +17,9 @@
 ### 
 
 <div>
-
-<a href="https://erdogant.github.io/pyperl/"><img src="https://github.com/erdogant/pyperl/blob/master/docs/figs/logo.png" width="175" align="left" /></a>
-**pyperl** is a Python library that automatically installs and manages Perl, and provides a clean interface for running Perl scripts from Python — with zero manual Perl setup required.
- Navigate to [API documentations](https://erdogant.github.io/pyperl/) for more detailed information. **⭐️ Star it if you like it ⭐️**
+<a href="https://erdogant.github.io/pyperl/"><img src="https://github.com/erdogant/pyperl/blob/main/docs/figs/logo.png" width="125" align="left" /></a>
+<b>pyperl</b> is a Python library that automatically installs and manages Perl, and provides a clean interface for running Perl scripts from Python — with zero manual Perl setup required.
+ Navigate to https://erdogant.github.io/pyperl for more detailed information. <b>⭐️ Star it if you like it ⭐️</b>
 </div>
 
 ---
