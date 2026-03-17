@@ -1,6 +1,26 @@
-# pyperl
+[![Python](https://img.shields.io/pypi/pyversions/pyperl)](https://img.shields.io/pypi/pyversions/pyperl)
+[![PyPI Version](https://img.shields.io/pypi/v/pyperl)](https://pypi.org/project/pyperl/)
+![GitHub Repo stars](https://img.shields.io/github/stars/erdogant/pyperl)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/pyperl/blob/main/LICENSE)
+[![Forks](https://img.shields.io/github/forks/erdogant/pyperl.svg)](https://github.com/erdogant/pyperl/network)
+[![Open Issues](https://img.shields.io/github/issues/erdogant/pyperl.svg)](https://github.com/erdogant/pyperl/issues)
+[![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Downloads](https://pepy.tech/badge/pyperl/month)](https://pepy.tech/project/pyperl/)
+[![Downloads](https://pepy.tech/badge/pyperl)](https://pepy.tech/project/pyperl)
+[![Docs](https://img.shields.io/badge/Sphinx-Docs-Green)](https://erdogant.github.io/pyperl/)
+[![Medium](https://img.shields.io/badge/Medium-Blog-black)](https://erdogant.github.io/pyperl/pages/html/Documentation.html#medium-blog)
+![GitHub repo size](https://img.shields.io/github/repo-size/erdogant/pyperl)
+[![Donate](https://img.shields.io/badge/Support%20this%20project-grey.svg?logo=github%20sponsors)](https://erdogant.github.io/pyperl/pages/html/Documentation.html#)
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://erdogant.github.io/pyperl/pages/html/Documentation.html#colab-notebook)
 
-**pyperl** is a Python library that automatically installs and manages Perl, and provides a clean interface for running Perl scripts from Python — with zero manual Perl setup required.
+
+### 
+
+<div>
+<a href="https://erdogant.github.io/pyperl/"><img src="https://github.com/erdogant/pyperl/blob/main/docs/figs/logo.png" width="125" align="left" /></a>
+<b>pyperl</b> is a Python library that automatically installs and manages Perl, and provides a clean interface for running Perl scripts from Python — with zero manual Perl setup required.
+ Navigate to https://erdogant.github.io/pyperl for more detailed information. <b>⭐️ Star it if you like it ⭐️</b>
+</div>
 
 ---
 
@@ -76,38 +96,9 @@ On initialization, `pyperl` follows this resolution order:
 
 ---
 
-### API Reference
-
-#### `pyperl(perl_script, installation_dir, set_to_path, perl_search_dirs, force_install, verbose)`
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `perl_script` | `str` | `"perl_scripts/convert_audio.pl"` | Path to the default Perl script. |
-| `installation_dir` | `str` | system temp dir | Directory to install portable Perl. |
-| `set_to_path` | `bool` | `False` | Add Perl to the system `PATH`. |
-| `perl_search_dirs` | `list` | `None` | Extra directories to search for Perl. |
-| `force_install` | `bool` | `False` | Force reinstall portable Perl. |
-| `verbose` | `str` | `"info"` | Log level: `"silent"`, `"debug"`, `"info"`, `"warning"`, `"error"`, `"critical"`. |
-
-#### `pyperl.run(*args, script=None, timeout=300)`
-
-Executes a Perl script and returns a result dict.
-
-| Key | Type | Description |
-|-----|------|-------------|
-| `"stdout"` | `str` | Standard output from the script. |
-| `"stderr"` | `str` | Error output from the script. |
-| `"returncode"` | `int` | Exit code (`0` = success). |
-
-Raises `RuntimeError` on non-zero exit, timeout, or missing Perl executable.
-
----
-
 ### Maintainer
-
-* erdogant — [GitHub](https://github.com/erdogant)
+* Erdogan Taskesen, github: [erdogant](https://github.com/erdogant)
 * Contributions are welcome.
+* Yes! This library is entirely **free** but it runs on coffee! :) Feel free to support with a <a href="https://erdogant.github.io/donate/?currency=USD&amount=5">Coffee</a>.
 
-### License
-
-MIT License — see [LICENSE](LICENSE) for details.
+[![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy+me+a+coffee&emoji=&slug=erdogant&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/erdogant)
