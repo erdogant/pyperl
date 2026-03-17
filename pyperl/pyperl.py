@@ -217,6 +217,10 @@ class pyperl:
 
         logger.info('Installing perl from portable location.')
 
+        # Force delete for new fresh installations
+        if force_install:
+            self.clean_installation_dir()
+
         # Create directory
         self.installation_dir.mkdir(parents=True, exist_ok=True)
 
@@ -225,6 +229,7 @@ class pyperl:
         #     self.installation_dir
         #     / self.archive_dirname
         #     / ("bin/perl.exe" if self.archive_type == "zip" else "bin/perl"))
+
 
         # Check whether archive already exists, if not, then download
         if not self.archive_path.exists():
@@ -238,9 +243,6 @@ class pyperl:
             logger.error('Partable perl package not found. <return>')
             return None
 
-        # Force delete for new fresh installations
-        if force_install:
-            self.clean_installation_dir()
 
         if perl_exec is None or not perl_exec.exists() and self.archive_path.exists():
             logger.info("Extracting portable Perl...")
