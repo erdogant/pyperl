@@ -1,17 +1,12 @@
-[![Python](https://img.shields.io/pypi/pyversions/pyperl)](https://img.shields.io/pypi/pyversions/pyperl)
-[![PyPI Version](https://img.shields.io/pypi/v/pyperl)](https://pypi.org/project/pyperl/)
 ![GitHub Repo stars](https://img.shields.io/github/stars/erdogant/pyperl)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/erdogant/pyperl/blob/main/LICENSE)
 [![Forks](https://img.shields.io/github/forks/erdogant/pyperl.svg)](https://github.com/erdogant/pyperl/network)
 [![Open Issues](https://img.shields.io/github/issues/erdogant/pyperl.svg)](https://github.com/erdogant/pyperl/issues)
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![Downloads](https://pepy.tech/badge/pyperl/month)](https://pepy.tech/project/pyperl/)
-[![Downloads](https://pepy.tech/badge/pyperl)](https://pepy.tech/project/pyperl)
 [![Docs](https://img.shields.io/badge/Sphinx-Docs-Green)](https://erdogant.github.io/pyperl/)
 [![Medium](https://img.shields.io/badge/Medium-Blog-black)](https://erdogant.github.io/pyperl/pages/html/Documentation.html#medium-blog)
 ![GitHub repo size](https://img.shields.io/github/repo-size/erdogant/pyperl)
 [![Donate](https://img.shields.io/badge/Support%20this%20project-grey.svg?logo=github%20sponsors)](https://erdogant.github.io/pyperl/pages/html/Documentation.html#)
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://erdogant.github.io/pyperl/pages/html/Documentation.html#colab-notebook)
 
 
 ### 
