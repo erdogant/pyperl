@@ -54,26 +54,33 @@ from pyperl import pyperl
 perl = pyperl()
 
 # Run a Perl script
-result = perl.run("my_script.pl")
+result = perl.run(script="my_script.pl")
 print(result["stdout"])
 ```
 
 ##### Run a script with arguments
 ```python
-perl = pyperl(perl_script="perl_scripts/convert_audio.pl")
+from pyperl import pyperl
 
-result = perl.run("input.wav", "output.mp3")
+perl = pyperl(script="perl_scripts/convert_audio.pl")
+
+audiofile = perl.import_example()
+
+result = perl.run(audiofile, "c:\output.mp3")
 print(result["stdout"])
 print(result["returncode"])  # 0 = success
+
 ```
 
 ##### Use a custom installation directory
 ```python
+from pyperl import pyperl
 perl = pyperl(installation_dir="/opt/my_perl", set_to_path=True)
 ```
 
 ##### Force reinstall portable Perl
 ```python
+from pyperl import pyperl
 perl = pyperl(force_install=True)
 ```
 
