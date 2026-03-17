@@ -1,0 +1,2 @@
+include pyperl/perl_packages/perl-5.42.1.tar.gz
+include pyperl/perl_packages/strawberry-perl-5.42.0.1-64bit-portable.zip
