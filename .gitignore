@@ -5,6 +5,7 @@ __pycache__/
 
 #portable packges
 pyperl/portable_perl/
+pyperl/perl_packages/
 
 # C extensions
 *.so
